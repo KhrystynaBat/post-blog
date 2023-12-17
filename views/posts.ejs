@@ -1,0 +1,56 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/nav.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <div class="text-container", class="info1" style="max-width: 520px; margin: 0 auto; border: 10px solid #85d2c8">
+      <% if(posts.length) { %>
+        <div>
+          <h1 style="text-align: center">Усі пости</h1>
+          <table class="table table-striped sorting">
+            <thead>
+              <tr>
+                <th>Заголовок</th>
+                <th>Автор</th>
+                <th>Опис</th>
+                <th>Редагувати</th>
+                <th>Видалити</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if(posts.length) {%>
+                <%posts.forEach((post)=> { %>
+                  <tr id="id_<%= post._id %>" class="">
+                    <td>
+                      <%= post.title %>
+                    </td>
+                    <td>
+                      <%= post.author %>
+                    </td>
+                    <td>
+                      <%= post.description %>
+                    </td>
+                    <td><a href="/edit-post/<%= post._id %>">Редагувати</a></td>
+                    <td>
+                      <a class="confirmDeletion" href="" data-id="<%= post._id %>">Видалити</a>
+                    </td>
+                  </tr>
+                  <% })}; %>
+            </tbody>
+          </table>
+        </div>
+        <%} else{%>
+          <h1>Тут ще немає постів..</h1>
+          <%}%>
+    </div>
+    <script>
+      document.addEventListener("click", (e) => {
+        const id = e.target?.dataset?.id || null;
+        if (id) {
+          fetch(`/posts/${id}`, {
+            method: "DELETE",
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      });
+    </script>
+    <%- include('./partials/footer.ejs') %>

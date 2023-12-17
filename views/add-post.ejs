@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/nav.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<div class="text-container", style="max-width: 520px; margin: 0 auto">
+  <h1>Додати пост</h1>
+  <div>
+    У цьому розділі Ви можете поділитися своєю історією або досвідом. Розкажіть нам про свої досягнення, мрії, або події,
+    які сформували Вас як особистість. Ваші враження та переживання можуть надихнути інших, тож не соромтеся ділитись тим,
+    що лежить у Вас на серці. <br> Використовуйте нижченаведені поля для введення назви поста, Вашого прізвища як автора та опис, 
+    після - натисніть "Створити", щоб поділитися постом зі світом.
+  </div>
+
+  <form method="post" action="">
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Назва</label>
+      <input
+        required
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Автор</label>
+      <input
+        required
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="author"
+      />
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Опис</label>
+      <input 
+      required type="text" 
+      class="form-control" 
+      id="exampleInputPassword1" 
+      name="description" 
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Створити</button>
+  </form>
+</div>
+<%- include('./partials/footer.ejs') %>

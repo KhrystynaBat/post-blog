@@ -1,0 +1,57 @@
+
+html, body {
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.text-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+table,
+th,
+td {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.confirmDeletion {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.confirmDeletion:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a[href*="/edit-post/"],
+.confirmDeletion {
+    text-decoration: none;
+}
+
+a[href*="/edit-post/"]:hover,
+.confirmDeletion:hover {
+    text-decoration: underline;
+}
